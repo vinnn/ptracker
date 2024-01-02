@@ -13,16 +13,16 @@
         },
         {
             "src": "icons/circle.svg",
-            "sizes": "72x72 96x96",
+            "sizes": "600x600",
             "purpose": "maskable"
         },
         {
             "src": "icons/tire.svg",
-            "sizes": "128x128 256x256"
+            "sizes": "600x600"
         },
         {
             "src": "icons/wheel.svg",
-            "sizes": "512x512"
+            "sizes": "600x600"
         }
     ]
 }

@@ -18,9 +18,11 @@ const APP_STATIC_RESOURCES = [
 
 // On install, cache the static resources
 self.addEventListener("install", (event) => {
+    console.log("sw install")
     event.waitUntil(
       (async () => {
         const cache = await caches.open(CACHE_NAME);
+        console.log("sw install, waitUntil, cache", cache);
         cache.addAll(APP_STATIC_RESOURCES);
       })(),
     );
@@ -28,9 +30,12 @@ self.addEventListener("install", (event) => {
 
 // delete old caches on activate
 self.addEventListener("activate", (event) => {
+    console.log("sw activate")
     event.waitUntil(
       (async () => {
         const names = await caches.keys();
+        console.log("sw activate / waitUntil, names", names);
+
         await Promise.all(
           names.map((name) => {
             if (name !== CACHE_NAME) {
@@ -38,7 +43,11 @@ self.addEventListener("activate", (event) => {
             }
           }),
         );
+        console.log("sw activate / waitUntil, Promise.all");
+
         await clients.claim();
+        console.log("sw activate / waitUntil, clients.claim()");
+
       })(),
     );
 });
@@ -46,17 +55,25 @@ self.addEventListener("activate", (event) => {
 // On fetch, intercept server requests
 // and respond with cached responses instead of going to network
 self.addEventListener("fetch", (event) => {
+    console.log("sw fetch")
     // As a single page app, direct app to always go to cached home page.
     if (event.request.mode === "navigate") {
-      event.respondWith(caches.match("/"));
-      return;
+        console.log("sw fetch, navigate")  
+        event.respondWith(caches.match("/"));
+        return;
     }
 
     // For all other requests, go to the cache first, and then the network.
     event.respondWith(
       (async () => {
+        console.log("sw fetch, respondWith")  
+        
         const cache = await caches.open(CACHE_NAME);
+        console.log("sw fetch, respondWith, cache", cache)  
+
         const cachedResponse = await cache.match(event.request.url);
+        console.log("sw fetch, respondWith, cachedResponse", cachedResponse) 
+
         if (cachedResponse) {
           // Return the cached response if it's available.
           return cachedResponse;

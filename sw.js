@@ -24,7 +24,7 @@ self.addEventListener("install", (event) => {
       })(),
     );
 });
-  
+
 // delete old caches on activate
 self.addEventListener("activate", (event) => {
     event.waitUntil(
@@ -41,7 +41,7 @@ self.addEventListener("activate", (event) => {
       })(),
     );
 });
-  
+
 // On fetch, intercept server requests
 // and respond with cached responses instead of going to network
 self.addEventListener("fetch", (event) => {
@@ -50,7 +50,7 @@ self.addEventListener("fetch", (event) => {
       event.respondWith(caches.match("/"));
       return;
     }
-  
+
     // For all other requests, go to the cache first, and then the network.
     event.respondWith(
       (async () => {

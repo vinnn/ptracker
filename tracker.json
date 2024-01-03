@@ -8,23 +8,9 @@
     "background_color": "#eeffee",
     "icons": [
         {
-            "src": "icons/images.ico",
-            "sizes": "225x225"
-        },
-        {
-            "src": "icons/circle.svg",
-            "sizes": "600x600",
-            "purpose": "maskable"
-        },
-        {
-            "src": "icons/tire.svg",
-            "type": "image/svg",
-            "sizes": "600x600",
-            "purpose": "any"
-        },
-        {
-            "src": "icons/wheel.svg",
-            "sizes": "600x600",
+            "src": "icons/brush-icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
             "purpose": "any"
         }
     ]

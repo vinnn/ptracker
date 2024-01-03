@@ -11,7 +11,6 @@ const APP_STATIC_RESOURCES = [
     "/index.html",
     "/style.css",
     "/app.js",
-    "/tracker.json",
     "/icons/brush-icon.png"
 ];
 

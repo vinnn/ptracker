@@ -18,7 +18,9 @@
         },
         {
             "src": "icons/tire.svg",
-            "sizes": "600x600"
+            "type": "image/svg",
+            "sizes": "600x600",
+            "purpose": "any"
         },
         {
             "src": "icons/wheel.svg",

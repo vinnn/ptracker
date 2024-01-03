@@ -67,10 +67,12 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       (async () => {
         console.log("sw fetch, respondWith")  
-        
+
+        console.log("sw fetch, respondWith, CACHE_NAME", CACHE_NAME)          
         const cache = await caches.open(CACHE_NAME);
         console.log("sw fetch, respondWith, cache", cache)  
 
+        console.log("sw fetch, respondWith, event.request.url", event.request.url)         
         const cachedResponse = await cache.match(event.request.url);
         console.log("sw fetch, respondWith, cachedResponse", cachedResponse) 
 

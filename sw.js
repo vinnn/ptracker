@@ -27,7 +27,7 @@ self.addEventListener("install", (event) => {
         // cache.addAll(APP_STATIC_RESOURCES);
         cache.addAll(["hello", "hello2"]);
         console.log("sw install, waitUntil, cache AFTER addAll", cache);
-      })(),
+      })()
     );
 });
 
@@ -44,14 +44,14 @@ self.addEventListener("activate", (event) => {
             if (name !== CACHE_NAME) {
               return caches.delete(name);
             }
-          }),
+          })
         );
         console.log("sw activate / waitUntil, Promise.all");
 
         await clients.claim();
         console.log("sw activate / waitUntil, clients.claim()");
 
-      })(),
+      })()
     );
 });
 
@@ -76,7 +76,8 @@ self.addEventListener("fetch", (event) => {
         console.log("sw fetch, respondWith, cache", cache)  
 
         console.log("sw fetch, respondWith, event.request.url", event.request.url)         
-        const cachedResponse = await cache.match(event.request.url);
+        // const cachedResponse = await cache.match(event.request.url);
+        const cachedResponse = await cache.match(event.request);       
         console.log("sw fetch, respondWith, cachedResponse", cachedResponse) 
 
         if (cachedResponse) {
@@ -85,7 +86,7 @@ self.addEventListener("fetch", (event) => {
         }
         // If resource isn't in the cache, return a 404.
         return new Response(null, { status: 404 });
-      })(),
+      })()
     );
 });
 

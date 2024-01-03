@@ -9,9 +9,9 @@ const CACHE_NAME = `period-tracker-${VERSION}`;
 const APP_STATIC_RESOURCES = [
     // "/",
     "/index.html",
-    "/style.css",
-    "/app.js",
-    "/tracker.json",
+    // "/style.css",
+    // "/app.js",
+    // "/tracker.json",
     // "/icons/wheel.svg",
     // "/icons/images.ico",
 ];

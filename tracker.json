@@ -22,7 +22,8 @@
         },
         {
             "src": "icons/wheel.svg",
-            "sizes": "600x600"
+            "sizes": "600x600",
+            "purpose": "any"
         }
     ]
 }

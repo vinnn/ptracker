@@ -12,7 +12,7 @@ const APP_STATIC_RESOURCES = [
     "/style.css",
     "/app.js",
     "/tracker.json",
-    "icons/brush-icon.png"
+    "/icons/brush-icon.png"
 ];
 
 // On install, cache the static resources

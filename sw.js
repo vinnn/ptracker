@@ -22,7 +22,7 @@ self.addEventListener("install", (event) => {
     event.waitUntil(
       (async () => {
         console.log("sw install, waitUntil, CACHE_NAME", CACHE_NAME);        
-        const cache = await caches.open(CACHE_NAME);
+        let cache = await caches.open(CACHE_NAME);
         console.log("sw install, waitUntil, cache BEFORE addAll", cache);
         console.log("sw install, waitUntil, APP_STATIC_RESOURCES", APP_STATIC_RESOURCES);          
         cache.addAll(APP_STATIC_RESOURCES);

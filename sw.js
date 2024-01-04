@@ -6,8 +6,8 @@ const CACHE_NAME = `period-tracker-${VERSION}`;
 
 // The static resources that the app needs to function.
 const APP_STATIC_RESOURCES = [
-//   "./",
-  "./ptracker/",
+  "./",
+//   "./ptracker/",
   "./index.html",
   "./app.js",
   "./style.css",
@@ -15,6 +15,7 @@ const APP_STATIC_RESOURCES = [
   "./icons/wheel.svg",
   "./icons/tire.svg",
   "./icons/circle.svg",
+  "./icons/brush-icon.png",
   "./favicon.ico"
 ];
 
@@ -61,7 +62,7 @@ self.addEventListener("fetch", (event) => {
 
         console.log("in sw, fetch, event.request", event.request)
 
-      const cachedResponse = await cache.match(event.request);
+      const cachedResponse = await cache.match(event.request.url); // event.request.url TBC
       if (cachedResponse) {
         // Return the cached response if it's available.
         return cachedResponse;

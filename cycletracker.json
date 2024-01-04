@@ -14,7 +14,7 @@
     {
       "src": "./icons/circle.svg",
       "sizes": "72x72 96x96",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
       "src": "./icons/tire.svg",

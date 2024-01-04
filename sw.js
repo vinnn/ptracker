@@ -14,6 +14,7 @@ const APP_STATIC_RESOURCES = [
   "./icons/wheel.svg",
   "./icons/tire.svg",
   "./icons/circle.svg",
+  "./favicon.ico"
 ];
 
 // On install, cache the static resources

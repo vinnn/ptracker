@@ -58,6 +58,9 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
+
+        console.log("in sw, fetch, event.request", event.request)
+
       const cachedResponse = await cache.match(event.request);
       if (cachedResponse) {
         // Return the cached response if it's available.

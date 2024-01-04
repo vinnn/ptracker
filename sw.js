@@ -50,7 +50,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   // As a single page app, direct app to always go to cached home page.
   if (event.request.mode === "navigate") {
-    event.respondWith(caches.match("./ptracker/"));
+    event.respondWith(caches.match("./"));
     return;
   }
 

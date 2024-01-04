@@ -13,6 +13,7 @@ const APP_STATIC_RESOURCES = [
   "./cycletracker.json",
   "./icons/wheel.svg",
   "./icons/tire.svg",
+  "./icons/tire2.svg",
 ];
 
 // On install, cache the static resources

@@ -10,6 +10,7 @@ const APP_STATIC_RESOURCES = [
   "./index.html",
   "./app.js",
   "./style.css",
+  "./cycletracker.json",
   "./icons/wheel.svg",
 ];
 

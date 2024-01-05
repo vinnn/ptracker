@@ -7,7 +7,7 @@ const CACHE_NAME = `period-tracker-${VERSION}`;
 // The static resources that the app needs to function.
 const APP_STATIC_RESOURCES = [
   "./",
-  "./ptracker/",
+//   "./ptracker/",
   "./index.html",
   "./app.js",
   "./style.css",
